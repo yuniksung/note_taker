@@ -9,27 +9,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
 
-notes = [];
+let noteData = [];
 
 app.get("/api/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "./db/db.json"));
-});
-
-let noteData = [];
-
-app.post("/api/notes", function(req, res) {
-    var newNote = req.body;
-    noteData.push(newNote);
-    noteData.map((noteObject, i) => noteObject.id = i + 1);
-
-    fs.writeFile("./db/db.json", JSON.stringify(noteData), function(error){
-        res.json(noteData);
-        if (error) {
-            return console.log(error);
-        }
-        console.log('SUCCESS!');
-    });
-
 });
 
 app.delete("/api/notes/:id", function (req, res) {
@@ -39,18 +22,28 @@ app.delete("/api/notes/:id", function (req, res) {
         if (error) {
             return console.log(error);
         }
+        
         jsonData = JSON.parse(data);
         jsonData.splice(id - 1, 1);
         jsonData.map((noteObject, i) => noteObject.id = i + 1);
-      
-        console.log(jsonData);
-        
-        fs.writeFile("./db/db.json", JSON.stringify(jsonData), function () {
-            res.json(jsonData);
-        });
+        noteData = jsonData;
+        writeJSONfile(jsonData, res);
     });
-    
 });
+
+app.post("/api/notes", function(req, res) {
+    var newNote = req.body;
+    noteData.push(newNote);
+    noteData.map((noteObject, i) => noteObject.id = i + 1);
+    console.log(noteData);
+    // fs.readFile("./db/db.json", "utf8", function (error, data) {
+    //     writeJSONfile(data, res);
+    // });
+    writeJSONfile(noteData, res);
+
+});
+
+
 
 app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "public/notes.html"));
@@ -59,6 +52,12 @@ app.get("/notes", function(req, res) {
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "public/index.html"));
 });
+
+function writeJSONfile(jsonArray, res) {
+    fs.writeFile("./db/db.json", JSON.stringify(jsonArray), function () {
+        res.json(jsonArray);
+    });  
+}
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
