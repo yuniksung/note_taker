@@ -1,5 +1,5 @@
 # Note Taker
-UCI Boot Camp Homework 11 - Note Take
+UCI Boot Camp Homework 11 - Note Taker
 
 ![deployed application](Assets/deployed_app.JPG)
 
