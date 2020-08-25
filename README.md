@@ -1,7 +1,10 @@
-# note_taker
+# Note Taker
 UCI Boot Camp Homework 11 - Note Take
 
 ![deployed application](Assets/deployed_app.JPG)
+
+## Link to Deployed Application
+[https://maxx-note-taker.herokuapp.com/](https://maxx-note-taker.herokuapp.com/)
 
 ## Description 
  This was the eleventh homework assignment for the full stack web development program at UC Irvine, in which the goal was to build an application that allows the user to create, save, and delete notes which runs on a server.
@@ -16,23 +19,23 @@ UCI Boot Camp Homework 11 - Note Take
 
 ## Technologies 
 * This application is written in Javascript and uses HTML and CSS for styling. It also incorporates the Bootstrap CSS framework.
-* This application uses the inquirer, fs, and path npm packages.
-* It also uses the Jest npm package for testing.
-* It uses the OOP style of scripting. 
-* Lastly, it requires node.js to run it.
+* This application uses the express, fs, and path npm packages.
+* This application uses Express and node.js 
+* This application uses JQuery and Ajax for API calls.
+* Lastly, it is deployed to Heroku.
 
 ## Usage 
-Open a terminal and enter the 'Develop' directory. Run the app.js by typing 'node app.js'. It will first ask you for the number of employees that would like to add. It does not include yourself (the manager). It will then ask you for your name, email, and office number. You will then start entering information for each employee which includes employee type (engineer or intern), name, email, and a unique question depending on the employee type. For engineer, it will ask for the employee's github username and for intern, it will ask for the employee's school. Once all of the information is entered, it will append all of the information to the team.html file found in /Develop/output. Open this file in a browser to view the file created by your input!
+In order to use this application, navigate to the link to the [deployed application](https://maxx-note-taker.herokuapp.com/) above. Click on the "Get Started" button to take you to the /notes page where you can create your notes. You can enter in a note title and note text and then press the save symbol to save that note to the left side of the screen. You can save as many notes as you would like and click on any of them to display the note title and text. If displaying the note, you can click the pencil symbol in the top right to clear the title and text fields so you can enter a new note. You can also delete any of your notes by clicking the delete symbol on each note. You can also access the API which includes an array of JSON objects with title and text for each note by navigating to the /api/notes route.
 
 ## License 
  ISC
 
 ## Badges 
- ![languages badge](https://img.shields.io/github/languages/count/maxx105/employee_summary)
- ![languages badge](https://img.shields.io/github/languages/top/maxx105/employee_summary)
+ ![languages badge](https://img.shields.io/github/languages/count/maxx105/note_taker)
+ ![languages badge](https://img.shields.io/github/languages/top/maxx105/note_taker)
 
 ## Tests 
- Several tests were created and passed in this project. See Employee.test.js, Intern.test.js, Manager.test.js, and Engineer.test.js. I used Jest for testing. In the Develop director, run 'npm run test' in your terminal to check for tests.
+This project does not include any tests.
 
 ## Questions 
  For any questions, contact me at [maxxsanner105@gmail.com](mailto:maxxsanner105@gmail.com).
