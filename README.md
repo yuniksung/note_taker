@@ -33,7 +33,3 @@ In order to use this application, navigate to the link to the [deployed applicat
 
 ## Tests 
 This project does not include any tests.
-
-## Questions 
- For any questions, contact me at [maxxsanner105@gmail.com](mailto:maxxsanner105@gmail.com).
-#### [![Profile Pic](https://avatars.githubusercontent.com/u/63183869?)](https://github.com/maxx105)
